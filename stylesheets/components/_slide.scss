@@ -1,0 +1,32 @@
+.slide {
+    z-index: 1;
+    position: absolute;
+    top: -100%;
+    min-height: 100%;
+    background: #fff;
+    transition: 0.5s;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.show-slide {
+    z-index: 2;
+    top: 0;
+    transition: 0.5s;
+}
+
+.start {
+
+}
+
+.player {
+    
+}
+
+.game {
+    
+}
+
+.score {
+   
+}
