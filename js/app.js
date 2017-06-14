@@ -12,19 +12,22 @@
     document.getElementById('restart-game').addEventListener('click', restartGame);
 
     function startGame() {
-        var cards_count = cards_per_column * difficulty_level.value;
-        var cards_array = getCards(cards_count);
+        var state = {
+            turn_count: 0,
+            turned_cards: [],
+            discarded_cards: [],
+            cards_count: cards_per_column * difficulty_level.value,
+        }
+
+        var cards_array = getCards(state.cards_count);
         var game_board_rows = game_board.childNodes;
-        var turn_count = 0;
-        var turned_cards = [];
-        var discarded_cards = [];
 
         visibilityClassSwap(start_screen, game_screen);
         renderGrid(difficulty_level.value, cards_array);
 
         for (var i = 0; i < game_board_rows.length; i++) {
             game_board_rows[i].addEventListener('click', function (e) {
-                gameLogic(e, turned_cards, turn_count, discarded_cards, cards_count);
+                gameLogic(e, state);
             });
         }
     }
@@ -34,57 +37,64 @@
         visibilityClassSwap(score_screen, start_screen);
     }
 
-    function gameLogic(e, turned_cards, turn_count, discarded_cards, cards_count) {
-
+    function gameLogic(e, state) {
         if (e.target === e.currentTarget) {
             return;
         }
 
-        if (turned_cards.length === 0) {
-            turned_cards.push(e.target);
+        if (state.turned_cards.length === 0) {
+            state.turned_cards.push(e.target);
             turnCard(e);
         }
 
-        if (turned_cards.length === 1 && e.target !== turned_cards[0]) {
-            turned_cards.push(e.target);
+        if (state.turned_cards.length === 1 && e.target !== state.turned_cards[0]) {
+            state.turned_cards.push(e.target);
             turnCard(e);
 
-            var card_one_pair_index = turned_cards[0].dataset.pairId;
-            var card_two_pair_index = turned_cards[1].dataset.pairId;
+            var card_one_pair_index = state.turned_cards[0].dataset.pairId;
+            var card_two_pair_index = state.turned_cards[1].dataset.pairId;
 
             if (card_one_pair_index === card_two_pair_index) {
                 window.setTimeout(function () {
-                    cardsMatch(turned_cards, turn_count, discarded_cards, cards_count);
+                    cardsMatch(state);
                 }, turn_timeout);
             } else if (card_one_pair_index !== card_two_pair_index) {
                 window.setTimeout(function () {
-                    cardsMismatch(turned_cards, turn_count);
+                    cardsMismatch(state);
                 }, turn_timeout);
             }
         }
         e.stopPropagation();
+        
+        console.log(state.turn_count);
     }
 
-    function cardsMatch(turned_cards, turn_count, discarded_cards, cards_count) {
-        for (var i = 0; i < turned_cards.length; i++) {
-            turned_cards[i].style.visibility = 'hidden';
+    function cardsMatch(state) {
+        for (var i = 0; i < state.turned_cards.length; i++) {
+            state.turned_cards[i].style.visibility = 'hidden';
         }
-        turn_count += 1;
-        discarded_cards.push(turned_cards);
-        turned_cards.splice(0, 2);
+        state.turn_count += 1;
+        state.discarded_cards.push(state.turned_cards);
+        state.turned_cards.splice(0, 2);
 
-        if (discarded_cards.length === cards_count / 2) {
-            window.setTimeout(visibilityClassSwap(game_screen, score_screen), game_end_timeout);
-            document.getElementById('score').textContent = turn_count + ' ruchow';
+        if (state.discarded_cards.length === state.cards_count / 2) {
+            gameEnd(state);
         }
     }
 
-    function cardsMismatch(turned_cards, turn_count) {
-        for (var i = 0; i < turned_cards.length; i++) {
-            turnCardBack(turned_cards[i]);
+    function cardsMismatch(state) {
+        for (var i = 0; i < state.turned_cards.length; i++) {
+            turnCardBack(state.turned_cards[i]);
         }
-        turn_count += 1;
-        turned_cards.splice(0, 2);
+        state.turn_count += 1;
+        state.turned_cards.splice(0, 2);
+    }
+
+    function gameEnd(state) {
+        window.setTimeout(function () {
+            visibilityClassSwap(game_screen, score_screen);
+        }, game_end_timeout);
+        document.getElementById('score').textContent = state.turn_count + ' ruchow';
     }
 
     function visibilityClassSwap(currentScreen, newScreen) {
