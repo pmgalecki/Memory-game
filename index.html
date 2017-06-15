@@ -1,37 +1,44 @@
 <!doctype html>
 <html>
+
 <head>
     <title>Memory</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+    <!--    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">-->
     <link rel="stylesheet" href="stylesheets/app.css">
 </head>
+
 <body>
-    <div class="container" id="game">
-<!--menu screen-->
-        <div class="slide start show-slide" id="start-screen">    
+    <!--menu screen-->
+    <div class="container">
+        <div class="slide start show-slide" id="start-screen">
             <div class="start-menu">
                 <button id="start-game">Rozpocznij grę</button>
-            </div>
-            <span>Wybierz poziom trudności</span>
-            <select name="difficulty-level" id="difficulty-level">
+                <span>Wybierz poziom trudności</span>
+                <select name="difficulty-level" id="difficulty-level">
                 <option value="4">Łatwy</option>
                 <option value="5">Średni</option>
                 <option value="6">Trudny</option>
-            </select>   
+            </select>
+            </div>
         </div>
-<!--game screen-->
+    </div>
+    <!--game screen-->
+    <div class="container">
         <div class="slide game" id="game-screen">
             <div class="board" id="game-board"></div>
-        </div> 
-<!--scores screen-->
+        </div>
+    </div>
+    <!--scores screen-->
+    <div class="container">
         <div class="slide score" id="score-screen">
             <h1>Twoj wynik to: </h1>
             <div class="score" id="score"><span></span></div>
             <button id="restart-game">Zagraj ponownie</button>
-        </div>                             
-    </div>              
+        </div>
+    </div>
     <script src="js/app.js"></script>
 </body>
+
 </html>

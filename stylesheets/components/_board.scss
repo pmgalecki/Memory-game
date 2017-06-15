@@ -1,35 +1,34 @@
 .board {
-    width: 100%;
-    height: 100%; 
+    max-width: 1068px;
     margin: 0 auto;
+    .row {
+        margin: 0 auto;
+        display: table;
+        min-width: 424px;
+    }
 }
 
 .card {
     background-image: url('../assets/images/card-back.png');
     background-size: contain;
     margin: 3px;
-    padding: 0;  
-    float: left;
-    border: 1px solid black;
+    padding: 0;
+    display: inline-grid;
+    min-height: 100px;
+    min-width: 100px;
 }
 
 .game-moves-box {
     width: 100%;
     margin: 10px auto;
-    
     h1 {
         text-align: center;
         display: block;
     }
-    
     .moves {
         height: 30px;
         max-width: 300px;
         text-align: center;
         margin: 10px auto;
     }
-}
-
-.row {
-    width: 100px;
 }
