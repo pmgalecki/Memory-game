@@ -4,7 +4,7 @@
     top: -100%;
     min-height: 100%;
     background: #fff;
-    transition: 0.5s;
+    transition: 0.2s;
     margin: 0 auto;
     width: 100%;
 }
@@ -12,7 +12,7 @@
 .show-slide {
     z-index: 2;
     top: 0;
-    transition: 0.5s;
+    transition: 0.2s;
 }
 
 .start {
@@ -23,6 +23,10 @@
     #start-game {
         display: block;
         margin: 40px auto;
+    }
+    #difficulty-level {
+        display: block;
+        margin: 0 auto;
     }
 }
 

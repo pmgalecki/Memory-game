@@ -6,7 +6,7 @@
     var game_board = document.getElementById('game-board');
     var cards_per_column = 4;
     var game_end_timeout = 300;
-    var turn_timeout = 700;
+    var turn_timeout = 900;
 
     document.getElementById('start-game').addEventListener('click', startGame);
     document.getElementById('restart-game').addEventListener('click', restartGame);
@@ -92,7 +92,7 @@
         window.setTimeout(function () {
             visibilityClassSwap(game_screen, score_screen);
         }, game_end_timeout);
-        document.getElementById('score').textContent = state.turn_count + ' ruchow';
+        document.getElementById('score').textContent = state.turn_count + ' ruchów';
     }
 
     function visibilityClassSwap(currentScreen, newScreen) {
