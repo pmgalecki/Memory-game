@@ -1,48 +1,5 @@
-.pair-1 {
-    background-image: url('../assets/images/animals/card_1.png');
+@for $i from 1 through 12 {
+    .pair-#{$i} {
+        background-image: url('../assets/images/animals/card_#{$i}.png');
+    }
 }
-
-.pair-2 {
-    background-image: url('../assets/images/animals/card_2.png');
-}
-
-.pair-3 {
-    background-image: url('../assets/images/animals/card_3.png');
-}
-
-.pair-4 {
-    background-image: url('../assets/images/animals/card_4.png');
-}
-
-.pair-5 {
-    background-image: url('../assets/images/animals/card_5.png');
-}
-
-.pair-6 {
-    background-image: url('../assets/images/animals/card_6.png');
-}
-
-.pair-7 {
-    background-image: url('../assets/images/animals/card_7.png');
-}
-
-.pair-8 {
-    background-image: url('../assets/images/animals/card_8.png');
-}
-
-.pair-9 {
-    background-image: url('../assets/images/animals/card_9.png');
-}
-
-.pair-10 {
-    background-image: url('../assets/images/animals/card_10.png');
-}
-
-.pair-11 {
-    background-image: url('../assets/images/animals/card_11.png');
-}
-
-.pair-12 {
-    background-image: url('../assets/images/animals/card_12.png');
-}
-
