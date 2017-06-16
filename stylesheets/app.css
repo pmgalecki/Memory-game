@@ -42,7 +42,7 @@
 .card {
   background-image: url("../assets/images/card-back.png");
   background-size: contain;
-  margin: 3px;
+  margin: 1px 3px;
   padding: 0;
   display: inline-block;
   min-height: 100px;
