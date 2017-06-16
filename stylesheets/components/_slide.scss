@@ -30,7 +30,7 @@
             font-size: 40px;
             background: none;
         }
-        span {
+        h1 {
             font-size: 27px;
             font-weight: bold;
             margin: 38px 0 15px;
@@ -52,4 +52,30 @@
 .score {
     margin: 0 auto;
     text-align: center;
+    .end-menu {
+        margin: 190px auto 0;
+        text-align: center;
+        border: 2px solid black;
+        border-radius: 5px;
+        width: 50%;
+        min-width: 150px;
+        h1 {
+            font-size: 27px;
+            font-weight: bold;
+            margin: 38px 0 15px;
+            display: block;
+        }
+        #score {
+            span {
+                font-size: 20px;
+            }
+        }
+        #restart-game {
+            display: block;
+            margin: 40px auto;
+            font-family: 'Amatic SC', cursive;
+            font-size: 40px;
+            background: none;
+        }
+    }
 }

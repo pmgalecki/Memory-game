@@ -31,7 +31,7 @@
   font-size: 40px;
   background: none;
 }
-.start .start-menu span {
+.start .start-menu h1 {
   font-size: 27px;
   font-weight: bold;
   margin: 38px 0 15px;
@@ -47,6 +47,30 @@
 .score {
   margin: 0 auto;
   text-align: center;
+}
+.score .end-menu {
+  margin: 190px auto 0;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 50%;
+  min-width: 150px;
+}
+.score .end-menu h1 {
+  font-size: 27px;
+  font-weight: bold;
+  margin: 38px 0 15px;
+  display: block;
+}
+.score .end-menu #score span {
+  font-size: 20px;
+}
+.score .end-menu #restart-game {
+  display: block;
+  margin: 40px auto;
+  font-family: 'Amatic SC', cursive;
+  font-size: 40px;
+  background: none;
 }
 
 .board {
