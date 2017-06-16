@@ -34,7 +34,7 @@
   max-width: 1068px;
   margin: 0 auto;
 }
-.board .row {
+.board .card-row {
   margin: 0 auto;
   display: table;
   min-width: 424px;
@@ -129,6 +129,11 @@
 
 .pair-12 {
   background-image: url("../assets/images/animals/card_12.png");
+}
+
+body {
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .container {

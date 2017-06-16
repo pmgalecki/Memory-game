@@ -65,8 +65,6 @@
             }
         }
         e.stopPropagation();
-        
-        console.log(state.turn_count);
     }
 
     function cardsMatch(state) {
@@ -114,7 +112,7 @@
         for (var i = 0; i < cards_per_column; i++) {
             var row = document.createElement('div');
 
-            row.className = 'row';
+            row.className = 'card-row';
             for (var j = 0; j < col_number; j++) {
                 var card = drawCard(cards);
                 var card_div = document.createElement('div');
