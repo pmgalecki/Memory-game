@@ -5,9 +5,12 @@
     var difficulty_level = document.getElementById('difficulty-level');
     var game_board = document.getElementById('game-board');
     var cards_per_column = 4;
-    var game_end_timeout = 300;
+    var game_end_timeout = 500;
     var turn_timeout = 900;
-    var audio = new Audio('assets/sounds/success.mp3');
+    var audio = {
+        success: new Audio('assets/sounds/success.mp3'),
+        game_end: new Audio('assets/sounds/game-end.mp3')
+    } 
 
     document.getElementById('start-game').addEventListener('click', startGame);
     document.getElementById('restart-game').addEventListener('click', restartGame);
@@ -72,7 +75,7 @@
         for (var i = 0; i < state.turned_cards.length; i++) {
             state.turned_cards[i].style.visibility = 'hidden';
         }
-        audio.play();
+        audio.success.play();
         state.turn_count += 1;
         state.discarded_cards.push(state.turned_cards);
         state.turned_cards.splice(0, 2);
@@ -93,6 +96,7 @@
     function gameEnd(state) {
         window.setTimeout(function () {
             visibilityClassSwap(game_screen, score_screen);
+            audio.game_end.play();
         }, game_end_timeout);
         document.getElementById('score').textContent = state.turn_count + ' ruchów';
     }
