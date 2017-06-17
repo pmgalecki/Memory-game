@@ -7,6 +7,7 @@
     var cards_per_column = 4;
     var game_end_timeout = 300;
     var turn_timeout = 900;
+    var audio = new Audio('assets/sounds/success.mp3');
 
     document.getElementById('start-game').addEventListener('click', startGame);
     document.getElementById('restart-game').addEventListener('click', restartGame);
@@ -71,6 +72,7 @@
         for (var i = 0; i < state.turned_cards.length; i++) {
             state.turned_cards[i].style.visibility = 'hidden';
         }
+        audio.play();
         state.turn_count += 1;
         state.discarded_cards.push(state.turned_cards);
         state.turned_cards.splice(0, 2);
