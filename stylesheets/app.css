@@ -66,6 +66,11 @@
 #game-screen #game-board .card-row {
   margin: 0 auto;
   display: table;
+  user-select: none;
+  -khtml-user-select: none;
+  -o-user-select: none;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
 }
 
 #score-screen {
