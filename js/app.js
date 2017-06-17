@@ -95,8 +95,8 @@
 
     function gameEnd(state) {
         window.setTimeout(function () {
-            visibilityClassSwap(game_screen, score_screen);
             audio.game_end.play();
+            visibilityClassSwap(game_screen, score_screen);
         }, game_end_timeout);
         document.getElementById('score').textContent = state.turn_count + ' ruchów';
     }
