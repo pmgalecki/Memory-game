@@ -71,14 +71,10 @@
     background-color: beige;
     #game-board {
         max-width: 1068px;
-        margin: 0 auto;
-//        position: relative;
-//        top: -50%;
-//        transform: translateY(15%);
+        margin: 25px auto 0;
         .card-row {
             margin: 0 auto;
             display: table;
-            min-width: 424px;
         }
     }
 }
@@ -93,9 +89,7 @@
             @include header;
         }
         #score {
-            span {
-                font-size: 20px;
-            }
+            font-size: 27px;
         }
         #restart-game {
             @include button;

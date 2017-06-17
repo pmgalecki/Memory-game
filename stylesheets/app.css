@@ -61,12 +61,11 @@
 }
 #game-screen #game-board {
   max-width: 1068px;
-  margin: 0 auto;
+  margin: 25px auto 0;
 }
 #game-screen #game-board .card-row {
   margin: 0 auto;
   display: table;
-  min-width: 424px;
 }
 
 #score-screen {
@@ -86,8 +85,8 @@
   margin: 38px 0 15px;
   display: block;
 }
-#score-screen #end-menu #score span {
-  font-size: 20px;
+#score-screen #end-menu #score {
+  font-size: 27px;
 }
 #score-screen #end-menu #restart-game {
   display: block;
@@ -159,7 +158,6 @@
 }
 
 body {
-  overflow-y: hidden;
   overflow-x: hidden;
   font-family: 'Amatic SC', cursive;
   background-color: beige;
