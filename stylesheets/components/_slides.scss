@@ -15,12 +15,21 @@
     transition: 0.4s;
 }
 
-.start {
+.card {
+    background-image: url('../assets/images/card-back.png');
+    background-size: contain;
+    margin: 1px 3px;
+    padding: 0;
+    display: inline-block;
+    min-height: 100px;
+    min-width: 100px;
+}
+
+#start-screen {
+    background-color: beige;
     .start-menu {
         margin: 190px auto 0;
         text-align: center;
-        border: 2px solid black;
-        border-radius: 5px;
         width: 50%;
         min-width: 150px;
         #start-game {
@@ -45,18 +54,26 @@
     }
 }
 
-.player {}
+#game-screen {
+    background-color: beige;
+    #game-board {
+        max-width: 1068px;
+        margin: 0 auto;
+        .card-row {
+            margin: 0 auto;
+            display: table;
+            min-width: 424px;
+        }
+    }
+}
 
-.game {}
-
-.score {
+#score-screen {
+    background-color: beige;
     margin: 0 auto;
     text-align: center;
     .end-menu {
         margin: 190px auto 0;
         text-align: center;
-        border: 2px solid black;
-        border-radius: 5px;
         width: 50%;
         min-width: 150px;
         h1 {

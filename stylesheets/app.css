@@ -16,73 +16,6 @@
   transition: 0.4s;
 }
 
-.start .start-menu {
-  margin: 190px auto 0;
-  text-align: center;
-  border: 2px solid black;
-  border-radius: 5px;
-  width: 50%;
-  min-width: 150px;
-}
-.start .start-menu #start-game {
-  display: block;
-  margin: 40px auto;
-  font-family: 'Amatic SC', cursive;
-  font-size: 40px;
-  background: none;
-}
-.start .start-menu h1 {
-  font-size: 27px;
-  font-weight: bold;
-  margin: 38px 0 15px;
-  display: block;
-}
-.start .start-menu #difficulty-level {
-  display: block;
-  margin: 0 auto 25px;
-  font-family: 'Amatic SC', cursive;
-  font-size: 20px;
-}
-
-.score {
-  margin: 0 auto;
-  text-align: center;
-}
-.score .end-menu {
-  margin: 190px auto 0;
-  text-align: center;
-  border: 2px solid black;
-  border-radius: 5px;
-  width: 50%;
-  min-width: 150px;
-}
-.score .end-menu h1 {
-  font-size: 27px;
-  font-weight: bold;
-  margin: 38px 0 15px;
-  display: block;
-}
-.score .end-menu #score span {
-  font-size: 20px;
-}
-.score .end-menu #restart-game {
-  display: block;
-  margin: 40px auto;
-  font-family: 'Amatic SC', cursive;
-  font-size: 40px;
-  background: none;
-}
-
-.board {
-  max-width: 1068px;
-  margin: 0 auto;
-}
-.board .card-row {
-  margin: 0 auto;
-  display: table;
-  min-width: 424px;
-}
-
 .card {
   background-image: url("../assets/images/card-back.png");
   background-size: contain;
@@ -93,19 +26,74 @@
   min-width: 100px;
 }
 
-.game-moves-box {
-  width: 100%;
-  margin: 10px auto;
+#start-screen {
+  background-color: beige;
 }
-.game-moves-box h1 {
+#start-screen .start-menu {
+  margin: 190px auto 0;
   text-align: center;
+  width: 50%;
+  min-width: 150px;
+}
+#start-screen .start-menu #start-game {
+  display: block;
+  margin: 40px auto;
+  font-family: 'Amatic SC', cursive;
+  font-size: 40px;
+  background: none;
+}
+#start-screen .start-menu h1 {
+  font-size: 27px;
+  font-weight: bold;
+  margin: 38px 0 15px;
   display: block;
 }
-.game-moves-box .moves {
-  height: 30px;
-  max-width: 300px;
+#start-screen .start-menu #difficulty-level {
+  display: block;
+  margin: 0 auto 25px;
+  font-family: 'Amatic SC', cursive;
+  font-size: 20px;
+}
+
+#game-screen {
+  background-color: beige;
+}
+#game-screen #game-board {
+  max-width: 1068px;
+  margin: 0 auto;
+}
+#game-screen #game-board .card-row {
+  margin: 0 auto;
+  display: table;
+  min-width: 424px;
+}
+
+#score-screen {
+  background-color: beige;
+  margin: 0 auto;
   text-align: center;
-  margin: 10px auto;
+}
+#score-screen .end-menu {
+  margin: 190px auto 0;
+  text-align: center;
+  width: 50%;
+  min-width: 150px;
+}
+#score-screen .end-menu h1 {
+  font-size: 27px;
+  font-weight: bold;
+  margin: 38px 0 15px;
+  display: block;
+}
+#score-screen .end-menu #score span {
+  font-size: 20px;
+}
+#score-screen .end-menu #restart-game {
+  display: block;
+  margin: 40px auto;
+  font-family: 'Amatic SC', cursive;
+  font-size: 40px;
+  background: none;
 }
 
 @media (min-width: 768px) {
@@ -172,4 +160,5 @@ body {
   overflow-y: hidden;
   overflow-x: hidden;
   font-family: 'Amatic SC', cursive;
+  background-color: beige;
 }
