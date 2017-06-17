@@ -29,26 +29,27 @@
 #start-screen {
   background-color: beige;
 }
-#start-screen .start-menu {
+#start-screen #start-menu {
   margin: 190px auto 0;
   text-align: center;
   width: 50%;
   min-width: 150px;
 }
-#start-screen .start-menu #start-game {
+#start-screen #start-menu #start-game {
   display: block;
   margin: 40px auto;
   font-family: 'Amatic SC', cursive;
   font-size: 40px;
   background: none;
+  border: none;
 }
-#start-screen .start-menu h1 {
+#start-screen #start-menu h1 {
   font-size: 27px;
   font-weight: bold;
   margin: 38px 0 15px;
   display: block;
 }
-#start-screen .start-menu #difficulty-level {
+#start-screen #start-menu #difficulty-level {
   display: block;
   margin: 0 auto 25px;
   font-family: 'Amatic SC', cursive;
@@ -73,27 +74,28 @@
   margin: 0 auto;
   text-align: center;
 }
-#score-screen .end-menu {
+#score-screen #end-menu {
   margin: 190px auto 0;
   text-align: center;
   width: 50%;
   min-width: 150px;
 }
-#score-screen .end-menu h1 {
+#score-screen #end-menu h1 {
   font-size: 27px;
   font-weight: bold;
   margin: 38px 0 15px;
   display: block;
 }
-#score-screen .end-menu #score span {
+#score-screen #end-menu #score span {
   font-size: 20px;
 }
-#score-screen .end-menu #restart-game {
+#score-screen #end-menu #restart-game {
   display: block;
   margin: 40px auto;
   font-family: 'Amatic SC', cursive;
   font-size: 40px;
   background: none;
+  border: none;
 }
 
 @media (min-width: 768px) {

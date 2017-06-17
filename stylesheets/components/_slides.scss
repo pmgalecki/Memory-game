@@ -1,3 +1,26 @@
+@mixin button {
+    display: block;
+    margin: 40px auto;
+    font-family: 'Amatic SC', cursive;
+    font-size: 40px;
+    background: none;
+    border: none;
+}
+
+@mixin menu {
+    margin: 190px auto 0;
+    text-align: center;
+    width: 50%;
+    min-width: 150px;
+}
+
+@mixin header {
+    font-size: 27px;
+    font-weight: bold;
+    margin: 38px 0 15px;
+    display: block;
+}
+
 .slide {
     z-index: 1;
     position: absolute;
@@ -27,23 +50,13 @@
 
 #start-screen {
     background-color: beige;
-    .start-menu {
-        margin: 190px auto 0;
-        text-align: center;
-        width: 50%;
-        min-width: 150px;
+    #start-menu {
+        @include menu;
         #start-game {
-            display: block;
-            margin: 40px auto;
-            font-family: 'Amatic SC', cursive;
-            font-size: 40px;
-            background: none;
+            @include button;
         }
         h1 {
-            font-size: 27px;
-            font-weight: bold;
-            margin: 38px 0 15px;
-            display: block;
+            @include header;
         }
         #difficulty-level {
             display: block;
@@ -59,6 +72,9 @@
     #game-board {
         max-width: 1068px;
         margin: 0 auto;
+//        position: relative;
+//        top: -50%;
+//        transform: translateY(15%);
         .card-row {
             margin: 0 auto;
             display: table;
@@ -71,16 +87,10 @@
     background-color: beige;
     margin: 0 auto;
     text-align: center;
-    .end-menu {
-        margin: 190px auto 0;
-        text-align: center;
-        width: 50%;
-        min-width: 150px;
+    #end-menu {
+        @include menu;
         h1 {
-            font-size: 27px;
-            font-weight: bold;
-            margin: 38px 0 15px;
-            display: block;
+            @include header;
         }
         #score {
             span {
@@ -88,11 +98,7 @@
             }
         }
         #restart-game {
-            display: block;
-            margin: 40px auto;
-            font-family: 'Amatic SC', cursive;
-            font-size: 40px;
-            background: none;
+            @include button;
         }
     }
 }
