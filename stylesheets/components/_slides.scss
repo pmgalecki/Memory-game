@@ -5,6 +5,9 @@
     font-size: 40px;
     background: none;
     border: none;
+    &:focus {
+        outline: 0;
+    }
 }
 
 @mixin menu {
@@ -19,6 +22,16 @@
     font-weight: bold;
     margin: 38px 0 15px;
     display: block;
+}
+
+@mixin preventSelecting {
+    user-select: none;
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -webkit-backface-visibility: hidden;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .slide {
@@ -54,9 +67,11 @@
         @include menu;
         #start-game {
             @include button;
+            @include preventSelecting;
         }
         h1 {
             @include header;
+            @include preventSelecting;
         }
         #difficulty-level {
             display: block;
@@ -75,11 +90,7 @@
         .card-row {
             margin: 0 auto;
             display: table;
-            user-select: none;
-            -khtml-user-select: none;
-            -o-user-select: none;
-            -moz-user-select: -moz-none;
-            -webkit-user-select: none;
+            @include preventSelecting;
         }
     }
 }
@@ -92,12 +103,15 @@
         @include menu;
         h1 {
             @include header;
+            @include preventSelecting;
         }
         #score {
             font-size: 27px;
+            @include preventSelecting;
         }
         #restart-game {
             @include button;
+            @include preventSelecting;
         }
     }
 }

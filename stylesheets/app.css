@@ -42,12 +42,29 @@
   font-size: 40px;
   background: none;
   border: none;
+  user-select: none;
+  -khtml-user-select: none;
+  -o-user-select: none;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -webkit-backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+#start-screen #start-menu #start-game:focus {
+  outline: 0;
 }
 #start-screen #start-menu h1 {
   font-size: 27px;
   font-weight: bold;
   margin: 38px 0 15px;
   display: block;
+  user-select: none;
+  -khtml-user-select: none;
+  -o-user-select: none;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -webkit-backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 #start-screen #start-menu #difficulty-level {
   display: block;
@@ -71,6 +88,8 @@
   -o-user-select: none;
   -moz-user-select: -moz-none;
   -webkit-user-select: none;
+  -webkit-backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #score-screen {
@@ -89,9 +108,23 @@
   font-weight: bold;
   margin: 38px 0 15px;
   display: block;
+  user-select: none;
+  -khtml-user-select: none;
+  -o-user-select: none;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -webkit-backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 #score-screen #end-menu #score {
   font-size: 27px;
+  user-select: none;
+  -khtml-user-select: none;
+  -o-user-select: none;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -webkit-backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 #score-screen #end-menu #restart-game {
   display: block;
@@ -100,6 +133,16 @@
   font-size: 40px;
   background: none;
   border: none;
+  user-select: none;
+  -khtml-user-select: none;
+  -o-user-select: none;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -webkit-backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+#score-screen #end-menu #restart-game:focus {
+  outline: 0;
 }
 
 @media (min-width: 768px) {
