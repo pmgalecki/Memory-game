@@ -59,6 +59,7 @@
     display: inline-block;
     min-height: 100px;
     min-width: 100px;
+    border-radius: 10px;
 }
 
 #start-screen {
@@ -78,6 +79,7 @@
             margin: 0 auto 25px;
             font-family: 'Amatic SC', cursive;
             font-size: 20px;
+            @include preventSelecting;
         }
     }
 }
