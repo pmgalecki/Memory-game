@@ -42,11 +42,11 @@
 #start-screen #start-menu #menu-logo {
   width: 100%;
   height: auto;
-  margin: 0 auto;
+  margin: 0 auto 40px;
 }
 #start-screen #start-menu #start-game {
   display: block;
-  margin: 40px auto;
+  margin: 0 auto;
   font-family: 'Amatic SC', cursive;
   font-size: 40px;
   background: none;
@@ -142,7 +142,7 @@
 }
 #score-screen #end-menu #restart-game {
   display: block;
-  margin: 40px auto;
+  margin: 0 auto;
   font-family: 'Amatic SC', cursive;
   font-size: 40px;
   background: none;
