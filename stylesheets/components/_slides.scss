@@ -11,7 +11,6 @@
 }
 
 @mixin menu {
-    margin: 190px auto 0;
     text-align: center;
     width: 50%;
     min-width: 150px;
@@ -34,15 +33,21 @@
     -webkit-tap-highlight-color: transparent;
 }
 
+@mixin centerContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .slide {
     z-index: 1;
     position: absolute;
     top: -100%;
     min-height: 100%;
-    background: #fff;
     transition: 0.4s;
     margin: 0 auto;
     width: 100%;
+    @include centerContent;
 }
 
 .show-slide {
@@ -88,7 +93,6 @@
     background-color: beige;
     #game-board {
         max-width: 1068px;
-        margin: 25px auto 0;
         .card-row {
             margin: 0 auto;
             display: table;

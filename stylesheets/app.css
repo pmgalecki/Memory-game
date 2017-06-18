@@ -4,10 +4,12 @@
   position: absolute;
   top: -100%;
   min-height: 100%;
-  background: #fff;
   transition: 0.4s;
   margin: 0 auto;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .show-slide {
@@ -31,7 +33,6 @@
   background-color: beige;
 }
 #start-screen #start-menu {
-  margin: 190px auto 0;
   text-align: center;
   width: 50%;
   min-width: 150px;
@@ -86,7 +87,6 @@
 }
 #game-screen #game-board {
   max-width: 1068px;
-  margin: 25px auto 0;
 }
 #game-screen #game-board .card-row {
   margin: 0 auto;
@@ -106,7 +106,6 @@
   text-align: center;
 }
 #score-screen #end-menu {
-  margin: 190px auto 0;
   text-align: center;
   width: 50%;
   min-width: 150px;
