@@ -5,7 +5,7 @@
     var difficulty_level = document.getElementById('difficulty-level');
     var game_board = document.getElementById('game-board');
     var cards_per_column = 4;
-    var game_end_timeout = 500;
+    var game_end_timeout = 900;
     var turn_timeout = 900;
     var audio = {
         success: new Audio('assets/sounds/success.mp3'),
