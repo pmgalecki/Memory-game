@@ -44,6 +44,7 @@
     position: absolute;
     top: -100%;
     min-height: 100%;
+    background: #fff;
     transition: 0.4s;
     margin: 0 auto;
     width: 100%;
@@ -71,6 +72,9 @@
     background-color: beige;
     #start-menu {
         @include menu;
+        #menu-logo {
+            width: 400px;
+        }
         #start-game {
             @include button;
             @include preventSelecting;
