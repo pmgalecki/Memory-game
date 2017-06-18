@@ -40,7 +40,9 @@
   min-width: 150px;
 }
 #start-screen #start-menu #menu-logo {
-  width: 400px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
 }
 #start-screen #start-menu #start-game {
   display: block;
