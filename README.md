@@ -1,3 +1,5 @@
-# Memory-game
+# Zwierzobranie memory game
 
-fsdfdsf
+https://pmgalecki.github.io/Memory-game/
+
+
