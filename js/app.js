@@ -114,13 +114,13 @@
         card_to_turn_back.classList.remove('pair-' + card_to_turn_back.dataset.pairId);
     }
 
-    function renderGrid(col_number, cards) {
+    function renderGrid(col_number, cards_array) {
         for (var i = 0; i < cards_per_column; i++) {
             var row = document.createElement('div');
 
             row.className = 'card-row';
             for (var j = 0; j < col_number; j++) {
-                var card = drawCard(cards);
+                var card = drawCard(cards_array);
                 var card_div = document.createElement('div');
 
                 card_div.classList.add('card');
@@ -145,9 +145,9 @@
         return cards;
     }
 
-    function drawCard(array) {
-        var random_index = getRandomInt(0, array.length - 1);
-        var random_card = array.splice(random_index, 1)[0];
+    function drawCard(cards_array) {
+        var random_index = getRandomInt(0, cards_array.length - 1);
+        var random_card = cards_array.splice(random_index, 1)[0];
 
         return random_card;
     }
