@@ -141,7 +141,6 @@ function renderGrid(cards_count, cards_array, difficulty_level) {
         default:
             game_board.classList.add('small-size');
     }
-
 }
 
 function getCards(cards_count) {
