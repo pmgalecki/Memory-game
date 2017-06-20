@@ -29,7 +29,6 @@ function startGame() {
     }
 
     var cards_array = getCards(state.cards_count);
-    var game_board_rows = game_board.childNodes;
     visibilityClassSwap(start_screen, game_screen);
     renderGrid(state.cards_count, cards_array, difficulty_level.value);
 
