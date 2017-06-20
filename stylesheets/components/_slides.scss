@@ -8,6 +8,9 @@
     &:focus {
         outline: 0;
     }
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 @mixin menu {

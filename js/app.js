@@ -82,7 +82,7 @@ function cardsMatch(state, audio) {
     state.turned_cards = [];
 
     if (state.discarded_cards.length === state.cards_count / 2) {
-        gameEnd(state);
+        gameEnd(state, audio);
     }
 }
 
