@@ -3,7 +3,7 @@
 .slide {
   z-index: 1;
   position: absolute;
-  top: -100%;
+  top: -300%;
   min-height: 100%;
   background: #fff;
   transition: 0.4s;
@@ -26,8 +26,8 @@
   margin: 1px 3px;
   padding: 0;
   display: inline-block;
-  min-height: 100px;
-  min-width: 100px;
+  height: 100px;
+  width: 100px;
   border-radius: 10px;
 }
 
@@ -91,9 +91,6 @@
 
 #game-screen {
   background-color: beige;
-}
-#game-screen #game-board {
-  max-width: 1068px;
 }
 #game-screen #game-board .card-row {
   margin: 0 auto;
@@ -159,18 +156,21 @@
   outline: 0;
 }
 
-@media (min-width: 768px) {
-  .card {
-    width: 100px;
-    height: 100px;
-  }
+.small-size {
+  width: 424px;
+  min-width: 424px;
 }
-@media (min-width: 992px) {
-  .card {
-    width: 130px;
-    height: 130px;
-  }
+
+.medium-size {
+  width: 530px;
+  min-width: 530px;
 }
+
+.big-size {
+  width: 636px;
+  min-width: 636px;
+}
+
 .pair-1 {
   background-image: url("../assets/images/animals/card_1.png");
 }

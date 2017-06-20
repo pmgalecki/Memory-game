@@ -63,8 +63,8 @@
     margin: 1px 3px;
     padding: 0;
     display: inline-block;
-    min-height: 100px;
-    min-width: 100px;
+    height: 100px;
+    width: 100px;
     border-radius: 10px;
 }
 
@@ -98,7 +98,6 @@
 #game-screen {
     background-color: beige;
     #game-board {
-        max-width: 1068px;
         .card-row {
             margin: 0 auto;
             display: table;

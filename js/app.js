@@ -29,15 +29,13 @@ function startGame() {
 
     var cards_array = getCards(state.cards_count);
     var game_board_rows = game_board.childNodes;
-
+    console.log(difficulty_level.value);
     visibilityClassSwap(start_screen, game_screen);
-    renderGrid(difficulty_level.value, cards_array);
-
-    for (var i = 0; i < game_board_rows.length; i++) {
-        game_board_rows[i].addEventListener('click', function (e) {
-            gameLogic(e, state);
-        });
-    }
+    renderGrid(state.cards_count, cards_array, difficulty_level.value);
+    
+    game_board.addEventListener('click', function(e){
+        gameLogic(e, state);
+    });
 }
 
 function restartGame() {
@@ -119,21 +117,31 @@ function turnCardBack(card_to_turn_back) {
     card_to_turn_back.classList.remove('pair-' + card_to_turn_back.dataset.pairId);
 }
 
-function renderGrid(col_number, cards_array) {
-    for (var i = 0; i < rows_number; i++) {
-        var row = document.createElement('div');
+function renderGrid(cards_count, cards_array, difficulty_level) {
+    for (var j = 0; j < cards_count; j++) {
+        var card = drawCard(cards_array);
+        var card_div = document.createElement('div');
 
-        row.className = 'card-row';
-        for (var j = 0; j < col_number; j++) {
-            var card = drawCard(cards_array);
-            var card_div = document.createElement('div');
-
-            card_div.classList.add('card');
-            card_div.dataset.pairId = card.pair_id;
-            row.appendChild(card_div);
-        }
-        game_board.appendChild(row);
+        card_div.classList.add('card');
+        card_div.dataset.pairId = card.pair_id;
+        game_board.appendChild(card_div);
     }
+    var board_size = difficulty_level;
+
+    switch (board_size) {
+        case '4':
+            game_board.classList.add('small-size');
+            break;
+        case '5':
+            game_board.classList.add('medium-size');
+            break;
+        case '6':
+            game_board.classList.add('big-size');
+            break;
+        default:
+            game_board.classList.add('small-size');
+    }
+
 }
 
 function getCards(cards_count) {
