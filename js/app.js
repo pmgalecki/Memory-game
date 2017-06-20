@@ -14,17 +14,18 @@ var rows_number = 4;
 var game_end_timeout = 900;
 var turn_timeout = 900;
 
+var audio = {
+    card_turn: new Audio('assets/sounds/card-turn.mp3'),
+    success: new Audio('assets/sounds/success.mp3'),
+    game_end: new Audio('assets/sounds/game-end.mp3')
+}
+
 function startGame() {
     var state = {
         turn_count: 0,
         turned_cards: [],
         discarded_cards: [],
         cards_count: rows_number * difficulty_level.value,
-    }
-    var audio = {
-        card_turn: new Audio('assets/sounds/card-turn.mp3'),
-        success: new Audio('assets/sounds/success.mp3'),
-        game_end: new Audio('assets/sounds/game-end.mp3')
     }
 
     var cards_array = getCards(state.cards_count);
@@ -33,7 +34,7 @@ function startGame() {
     renderGrid(state.cards_count, cards_array, difficulty_level.value);
 
     game_board.addEventListener('click', function (e) {
-        gameLogic(e, state, audio);
+        gameLogic(e, state);
     });
 }
 
@@ -42,19 +43,19 @@ function restartGame() {
     visibilityClassSwap(score_screen, start_screen);
 }
 
-function gameLogic(e, state, audio) {
+function gameLogic(e, state) {
     if (e.target === e.currentTarget) {
         return;
     }
 
     if (state.turned_cards.length === 0) {
         state.turned_cards.push(e.target);
-        turnCard(e, audio);
+        turnCard(e);
     }
 
     if (state.turned_cards.length === 1 && e.target !== state.turned_cards[0]) {
         state.turned_cards.push(e.target);
-        turnCard(e, audio);
+        turnCard(e);
 
         var card_one_pair_index = state.turned_cards[0].dataset.pairId;
         var card_two_pair_index = state.turned_cards[1].dataset.pairId;
@@ -63,7 +64,7 @@ function gameLogic(e, state, audio) {
             window.setTimeout(function () {
                 cardsMatch(state, audio);
             }, turn_timeout);
-        } else if (card_one_pair_index !== card_two_pair_index) {
+        } else {
             window.setTimeout(function () {
                 cardsMismatch(state);
             }, turn_timeout);
@@ -72,7 +73,7 @@ function gameLogic(e, state, audio) {
     e.stopPropagation();
 }
 
-function cardsMatch(state, audio) {
+function cardsMatch(state) {
     for (var i = 0; i < state.turned_cards.length; i++) {
         state.turned_cards[i].style.visibility = 'hidden';
     }
@@ -82,7 +83,7 @@ function cardsMatch(state, audio) {
     state.turned_cards = [];
 
     if (state.discarded_cards.length === state.cards_count / 2) {
-        gameEnd(state, audio);
+        gameEnd(state);
     }
 }
 
@@ -94,7 +95,7 @@ function cardsMismatch(state) {
     state.turned_cards = [];
 }
 
-function gameEnd(state, audio) {
+function gameEnd(state) {
     window.setTimeout(function () {
         audio.game_end.play();
         visibilityClassSwap(game_screen, score_screen);
@@ -107,7 +108,7 @@ function visibilityClassSwap(currentScreen, newScreen) {
     newScreen.classList.add('show-slide');
 }
 
-function turnCard(e, audio) {
+function turnCard(e) {
     audio.card_turn.play();
     e.target.classList.add('pair-' + e.target.dataset.pairId);
 }
