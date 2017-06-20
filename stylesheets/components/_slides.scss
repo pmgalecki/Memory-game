@@ -98,11 +98,7 @@
 #game-screen {
     background-color: beige;
     #game-board {
-        .card-row {
-            margin: 0 auto;
-            display: table;
-            @include preventSelecting;
-        }
+        @include preventSelecting;
     }
 }
 
