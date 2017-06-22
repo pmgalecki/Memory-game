@@ -1,4 +1,4 @@
-window.addEventListener('load', main);
+window.addEventListener('DOMContentLoaded', main);
 
 function main() {
     document.getElementById('start-game').addEventListener('click', startGame);
@@ -127,15 +127,18 @@ function renderGrid(cards_count, cards_array, difficulty_level) {
         game_board.appendChild(card_div);
     }
     var board_size = difficulty_level;
-
+    var easy = document.getElementById('easy').value;
+    var medium = document.getElementById('medium').value;
+    var hard = document.getElementById('hard').value;
+    
     switch (board_size) {
-        case '4':
+        case easy:
             game_board.classList.add('small-size');
             break;
-        case '5':
+        case medium:
             game_board.classList.add('medium-size');
             break;
-        case '6':
+        case hard:
             game_board.classList.add('big-size');
             break;
         default:
