@@ -8,12 +8,10 @@ function main() {
 var start_screen = document.getElementById('start-screen');
 var game_screen = document.getElementById('game-screen');
 var score_screen = document.getElementById('score-screen');
-var difficulty_level = document.getElementById('difficulty-level');
 var game_board = document.getElementById('game-board');
 var rows_number = 4;
 var game_end_timeout = 900;
 var turn_timeout = 900;
-
 var audio = {
     card_turn: new Audio('assets/sounds/card-turn.mp3'),
     success: new Audio('assets/sounds/success.mp3'),
@@ -25,22 +23,41 @@ function startGame() {
         turn_count: 0,
         turned_cards: [],
         discarded_cards: [],
-        cards_count: rows_number * difficulty_level.value,
+        cards_count: rows_number * getDifficultyLevel()
     }
-
     var cards_array = getCards(state.cards_count);
-    
-    visibilityClassSwap(start_screen, game_screen);
-    renderGrid(state.cards_count, cards_array, difficulty_level.value);
 
-    game_board.addEventListener('click', function (e) {
+    visibilityClassSwap(start_screen, game_screen);
+    renderGrid(state.cards_count, cards_array, getDifficultyLevel());
+
+    game_board.addEventListener('click', function(e) {
         gameLogic(e, state);
     });
+    
+    document.getElementById('difficulty-level').reset();
 }
 
 function restartGame() {
     game_board.innerHTML = '';
+    game_board.className = '';
     visibilityClassSwap(score_screen, start_screen);
+}
+
+function getDifficultyLevel() {
+    var difficulty_level;
+    var easy = document.getElementById('easy');
+    var medium = document.getElementById('medium');
+    var hard = document.getElementById('hard');
+
+    if (easy.checked) {
+        difficulty_level = easy.value;
+    } else if (medium.checked) {
+        difficulty_level = medium.value;
+    } else {
+        difficulty_level = hard.value;
+    }
+
+    return difficulty_level;
 }
 
 function gameLogic(e, state) {
@@ -126,23 +143,15 @@ function renderGrid(cards_count, cards_array, difficulty_level) {
         card_div.dataset.pairId = card.pair_id;
         game_board.appendChild(card_div);
     }
-    var board_size = difficulty_level;
     var easy = document.getElementById('easy').value;
     var medium = document.getElementById('medium').value;
-    var hard = document.getElementById('hard').value;
     
-    switch (board_size) {
-        case easy:
-            game_board.classList.add('small-size');
-            break;
-        case medium:
-            game_board.classList.add('medium-size');
-            break;
-        case hard:
-            game_board.classList.add('big-size');
-            break;
-        default:
-            game_board.classList.add('small-size');
+    if (difficulty_level === easy) {
+        game_board.classList.add('small-size');
+    } else if (difficulty_level === medium) {
+        game_board.classList.add('medium-size');
+    } else {
+        game_board.classList.add('big-size');
     }
 }
 

@@ -83,7 +83,7 @@
   display: block;
   margin: 0 auto 25px;
   font-family: 'Amatic SC', cursive;
-  font-size: 20px;
+  font-size: 25px;
   user-select: none;
   -khtml-user-select: none;
   -o-user-select: none;
@@ -91,6 +91,17 @@
   -webkit-user-select: none;
   -webkit-backface-visibility: hidden;
   -webkit-tap-highlight-color: transparent;
+}
+#start-screen #start-menu #difficulty-level input {
+  display: none;
+}
+#start-screen #start-menu #difficulty-level input:checked + label {
+  color: #4ca572;
+}
+#start-screen #start-menu #difficulty-level label {
+  cursor: pointer;
+  margin: 0 10px;
+  transition: 0.2s color cubic-bezier(0.67, 0.34, 0, 0.77);
 }
 
 #game-screen {

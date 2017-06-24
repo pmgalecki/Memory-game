@@ -93,8 +93,19 @@
             display: block;
             margin: 0 auto 25px;
             font-family: 'Amatic SC', cursive;
-            font-size: 20px;
+            font-size: 25px;
             @include preventSelecting;
+            input {
+                display: none;
+            }
+            input:checked + label {
+                color: #4ca572;
+            }
+            label {
+                cursor: pointer;
+                margin: 0 10px;
+                transition: 0.2s color cubic-bezier(.67, .34, 0, .77);
+            }
         }
     }
 }
