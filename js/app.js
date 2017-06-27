@@ -112,12 +112,22 @@ function cardsMismatch(state) {
     state.turned_cards = [];
 }
 
+function getSecondDigitFromRight(number) {
+    return Math.floor((number / Math.pow(10, 1)) % 10);
+}
+
 function gameEnd(state) {
     window.setTimeout(function () {
         audio.game_end.play();
         visibilityClassSwap(game_screen, score_screen);
     }, game_end_timeout);
-    document.getElementById('score').textContent = state.turn_count + ' ruchów';
+     
+    if (state.turn_count % 10 === 2 || state.turn_count % 10 === 3 || state.turn_count % 10 === 4 && getSecondDigitFromRight(state.turn_count) !== 1 ) {
+        document.getElementById('score').textContent = state.turn_count + ' ruchy'; 
+    } else {
+        document.getElementById('score').textContent = state.turn_count + ' ruchów';
+    }
+    
 }
 
 function visibilityClassSwap(currentScreen, newScreen) {
